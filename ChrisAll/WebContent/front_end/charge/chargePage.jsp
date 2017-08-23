@@ -7,6 +7,8 @@
 <%response.setCharacterEncoding("UTF-8");%> 
 <html>
 <head>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <%@ include file="page4.file" %>
 <style type="text/css">
 .mm{
@@ -40,7 +42,9 @@
             <br />
         </div>
     </div>
-    <div class="row">
+   
+<!--     credit card imformation -->
+    <div class="row"  id="show">
         <div class="col-md-4 col-md-offset-3">
             <div class="credit-card-div">
                 <div class="panel panel-default">
@@ -120,9 +124,10 @@
                     </div>
                 </div>
             </div>
-            <!-- CREDIT CARD DIV END -->
+          
         </div>
     </div>
+      <!-- CREDIT CARD DIV END -->
     </form>
 </div>
 <script type="text/javascript">
@@ -147,8 +152,8 @@ function insert() {
 }
 
 </script>
+
 <%@ include file="/front_end/frontEndButtom.file" %>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -11,12 +11,17 @@
 	response.setCharacterEncoding("UTF-8");
 	
 	Member mem = (Member)session.getAttribute("member");
+	if(mem == null){
+		RequestDispatcher rd = request.getRequestDispatcher("/front_end/member/login.jsp");
+		rd.forward(request, response);
+		return;}
 	OrdService Ord = new OrdService();
 	List<Ord> OrdFk = Ord.getOneOrdByFk(mem.getMemNo());
 	List<Ord> OrdAll = Ord.getAll();
 	session.setAttribute("OrdAll", OrdAll);
 	session.setAttribute("OrdFk", OrdFk);
 %>
+
 <html>
 <head>
 <%@ include file="page4.file"%>
