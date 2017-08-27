@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="MS950"%>
+<%request.setCharacterEncoding("UTF-8");%>  
+<%response.setCharacterEncoding("UTF-8");%> 
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 postion-left-group ">
+                <div id="menu">
+                    <div class="panel list-group list-color">
+                        <a href="<%=request.getContextPath()%>/front_end/product/BrowseProduct.jsp" class="list-group-item ">商城首頁</a>
+                        <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm1" data-parent="#menu">瀏覽商品 
+                         <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></a>
+                        <div id="sm1" class="sublinks collapse">
+                            <a href="<%=request.getContextPath()%>/front_end/product/PetFoodType.jsp" class="list-group-item small" data-toggle="collapse" data-target="#sm11" data-parent="#sm1">寵物飼料
+                             </a>
+                            <div id="sm11" class="sublinks collapse">
+                                
+                            </div>
+                            <a href="<%=request.getContextPath()%>/front_end/product/PetGoodType.jsp" class="list-group-item small" data-toggle="collapse" data-target="#sm12" data-parent="#sm1">寵物用品
+                            </a>
+                            <div id="sm12" class="sublinks collapse">
+                                
+                            </div>
+                             <a href="<%=request.getContextPath()%>/front_end/product/PetToyType.jsp" class="list-group-item small" data-toggle="collapse" data-target="#sm13" data-parent="#sm1">寵物玩具
+                            </a>
+                            <div id="sm13" class="sublinks collapse">
+                                
+                            </div>
+                        </div>
+                        <a href="<%=request.getContextPath()%>/front_end/product/OrderView.jsp" class="list-group-item">我的訂單</a>
+                        <a href="<%=request.getContextPath()%>/front_end/charge/chargePage.jsp" class="list-group-item">儲值專區</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 ">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <!-- 幻燈片小圓點區 -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-id" data-slide-to="0" class=""></li>
+                                <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                                <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
+                            </ol>
+                            <!-- 幻燈片主圖區 -->
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img src="https://api.fnkr.net/testimg/2800x700/aaaaaa" alt="">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>標題</h1>
+                                            <p>內文</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="https://api.fnkr.net/testimg/2800x700/aaaaaa" alt="">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>標題</h1>
+                                            <p>內文？</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#" role="button">更多</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item active">
+                                    <img src="https://api.fnkr.net/testimg/2800x700/aaaaaa" alt="">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>標題</h1>
+                                            <p>內文</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#" role="button">詳細內容</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 上下頁控制區 -->
+                            <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                            <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+				
+				
+                <h5 class="page-header text-right">目前位置:商城專區</h5>
+                <div class="row">
+                    <br>
