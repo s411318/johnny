@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="BIG5"%>					
+				<div class="text-center">	
+					<input type="hidden" id="pageNow" value="<%= whichPage %>">
+                	<input type="hidden" id="showPage" value="<%= pageNumber %>">
+                    <ul class="pagination" >
+                    </ul>
+                    <br>
+                    <ul class="pager">
+                        <li><a href="<%=request.getRequestURI()%>?whichPage=<%=(whichPage-1)<=0? 1:whichPage-1%>">前一頁</a></li>
+                        <li><a href="<%=request.getRequestURI()%>?whichPage=<%=(whichPage+1)>=pageNumber? pageNumber:whichPage+1%>">下一頁</a></li>
+                    </ul>
+                </div>     
+        <script type="text/javascript">
+		function init(){
+			var pageNumber = parseInt($('#showPage').val()); //總頁數
+			var whichPage = parseInt($('#pageNow').val()); //第幾頁	
+			var pageNow = parseInt((whichPage-1)/5);
+			var pageMax;
+			var pageStart;
+			$('<li>').appendTo('.pagination');
+			$('<a>').attr("href","<%=request.getRequestURI()%>?whichPage=<%= (whichPage-5)<=0 ? 1:(whichPage-5)%>").html('&laquo;').appendTo('.pagination>li:first');
+			
+			if(5+5*pageNow>pageNumber){
+				pageMax = pageNumber;
+			}else{
+				pageMax = 5*pageNow+5;
+			}
+			
+
+			for(var i=1+5*pageNow;i<=pageMax;i++){
+				if(whichPage==i){
+					$('<li>').attr({"id":"pg","class":"active"}).appendTo('.pagination');
+				}else{
+					$('<li>').attr("id","pg").appendTo('.pagination');
+				}
+				$('<a>').attr("href","<%=request.getRequestURI()%>?whichPage="+i).text(i).appendTo('#pg');
+				$('#pg').removeAttr("id");
+			}
+			$('#pg').removeAttr("id");
+			$('<li>').appendTo('.pagination');
+			$('<a>').attr("href","<%=request.getRequestURI()%>?whichPage=<%=whichPage+5>=pageNumber? pageNumber:whichPage+5 %>").html('&raquo;').appendTo('.pagination>li:last');
+			
+			
+			
+			
+		}
+		
+		
+		window.onload = init;
+		</script>
